@@ -18,6 +18,7 @@ app.get('/',function(req,res){
 
 //authentication
 app.post('/api/user/signup',authenticationController.signup);
+app.post('/api/user/login',authenticationController.login);
 
 app.listen('3000', function(){
     console.log("Listening for local host 3000");
