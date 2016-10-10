@@ -5,10 +5,12 @@
     </head>
          <div class="row" ng-controller="NavigationController">
              <div class="col s12 m6">
-                 <div class="card blue-grey darken-1">
+                 <div ng-show="!loggedIn" class="card blue-grey darken-1">
                     <div class="card-content white-text">
                           <div class="input-field">
                             <input id="email" type="text" ng-model="login.email" class="validate">
+                          <input ng-show="!loggedIn" id="email" type="text" ng-model="login.email" class="validate">
+                              
                             <label for="email">Email address</label>
                           </div>
                           <div class="input-field">
@@ -18,6 +20,9 @@
                         <button class="btn waves-effect waves-light" type="submit" ng-click="logUserIn()" name="action">Login</button>
                         <a ui-sref="signUp">Create An Account</a>
                      </div>
+                 </div>
+                 <div ng-show="loggedIn">
+                        <a ui-sref="editProfile">Edit Profile</a>
                  </div>
              </div>
         </div>
@@ -29,4 +34,10 @@
     <script src="app/app.js"></script>
     <script src="app/navigation/navigation-controller.js"></script>
     <script src="app/signup/signup-controller.js"></script>
+    <script src="app/profile/edit-profile-controller.js"></script>
+    
+    <!-- libraries -->
+    <script src="node_modules/ng-file-upload/dist/ng-file-upload-all.js"></script>
+    <script src="node_modules/ng-file-upload/dist/ng-file-upload-shim.js"></script>
+    <script src="node_modules/ng-file-upload/dist/ng-file-upload.js"></script>
 </html>

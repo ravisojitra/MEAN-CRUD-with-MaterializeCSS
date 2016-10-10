@@ -1,0 +1,26 @@
+<div class="row">
+    <form class="col s12">
+        <div class="row">
+            <div class="row">
+                <div class="input-field col s6">
+                    <label for="Profile_pic">Image here</label>
+                    <div class="waves-effect waves-light btn" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'">Upload DP</div>
+                    
+                </div>
+            </div>
+            <div class="row"></div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="last_name" type="text" ng-model="user.username" ng-blur="updateUsername()" class="validate">
+                    <label for="last_name">Username</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <textarea id="textarea1" ng-model="user.bio" ng-blur="updateBio()" class="materialize-textarea"></textarea>
+                    <label for="textarea1">Textarea</label>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
